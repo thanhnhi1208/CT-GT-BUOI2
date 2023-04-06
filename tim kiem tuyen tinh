@@ -1,0 +1,42 @@
+#include<stdio.h>
+int a[100];
+int n;
+void nhapmang(int a[],int &n){
+	do{
+		printf("nhap n");
+		scanf("%d",&n);
+	}while(n<0||n>100);
+	for(int i=0;i<n;i++){
+		printf("a[%d]=	",i);
+		scanf("%d",&a[i]);
+	}
+}
+
+void xuatmang(int a[],int n){
+
+	for(int i=0;i<n;i++){
+			printf("%d	",a[i]);
+	}
+}
+int linearSearch(int a[], int n, int x){
+	for(int i=0;i<n;i++){
+		if(a[i]==x){
+			return i;
+		}
+	}
+		return -1;
+}
+int main(){
+	int a[100];
+	int n;
+	int x=10;
+	nhapmang(a,n);
+	xuatmang(a,n);
+	int index=linearSearch(a,n,x);
+	if(index==-1){
+	printf("khong tim thay %d",x);
+	}else{
+	printf("%d co trong mang tai vi tri %d ",x,index);
+	}
+	return 0;
+}
